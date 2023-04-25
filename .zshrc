@@ -108,14 +108,14 @@ source $ZSH/oh-my-zsh.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/matheus/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mathpn/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/matheus/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/matheus/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mathpn/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mathpn/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/matheus/miniconda3/bin:$PATH"
+        export PATH="/home/mathpn/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -131,6 +131,8 @@ command -v lsd > /dev/null && alias tree='lsd --tree'
 alias cat='batcat --pager=never --style==plain'
 alias less='batcat'
 
+# editor
+export EDITOR=nvim
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
