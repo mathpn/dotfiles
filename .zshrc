@@ -121,21 +121,24 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
 alias kssh="kitty +kitten ssh"
+alias bat='bat --theme=ansi-dark'
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
-alias cat='batcat --pager=never --style==plain'
-alias less='batcat'
+alias cat='bat --pager=never --style==plain'
+alias less='bat'
 
 # editor
 export EDITOR=nvim
 
 # terminal emulator
 export TERM=kitty
+export TERMINAL=kitty
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
