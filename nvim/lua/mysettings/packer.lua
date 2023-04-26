@@ -6,14 +6,14 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'folke/tokyonight.nvim'
   use 'kyazdani42/nvim-web-devicons'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   } 
   use 'numToStr/Comment.nvim' 
-  use 'nvim-treesitter/nvim-treesitter'
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
@@ -31,5 +31,4 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true }
   }
-  use "folke/trouble.nvim"
 end)
