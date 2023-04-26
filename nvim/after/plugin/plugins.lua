@@ -18,19 +18,6 @@ require('bufferline').setup({
     }
   }
 })
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
-  ensure_installed = {
-    'javascript',
-    'typescript',
-    'python',
-    'lua',
-    'elixir',
-    'rust',
-  }
-})
 
 require("gitsigns").setup({})
 
