@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -97,25 +99,16 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mathpn/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/matheus/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/mathpn/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mathpn/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/matheus/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/matheus/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/mathpn/miniconda3/bin:$PATH"
+        export PATH="/home/matheus/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -139,10 +132,6 @@ export EDITOR=nvim
 # terminal emulator
 export TERM=kitty
 export TERMINAL=kitty
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # snippets
 find() {
@@ -176,3 +165,5 @@ gitlog() {
     setterm -linewrap on
 }
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
