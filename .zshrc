@@ -120,10 +120,10 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias kssh="kitty +kitten ssh"
-alias bat='bat --theme=ansi-dark'
+alias bat='bat --theme=ansi'
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
-alias cat='bat --pager=never --style==plain'
+alias cat='bat --pager=never --style=plain'
 alias less='bat'
 
 # editor
