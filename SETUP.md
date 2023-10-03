@@ -1,15 +1,19 @@
-## Powerlevel10k
+# Setup
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-
-## zsh-syntax-highlighting
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-### activate plugin in ~/.zshrc
-plugins=( [plugins...] zsh-syntax-highlighting)
-
-## Packer (neovim)
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+Essential stuff:
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [neovim](https://neovim.io/)
+- [kitty](https://github.com/kovidgoyal/kitty)
+- [bat](https://github.com/sharkdp/bat)
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- [zsh](https://www.zsh.org/)
+- [lsd](https://github.com/lsd-rs/lsd)
+- [btop](https://github.com/aristocratos/btop)
+- [gogh](https://github.com/Gogh-Co/Gogh)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [listme](https://github.com/mathpn/listme)
+- [fd](https://github.com/sharkdp/fd)
+- [fzf](https://github.com/junegunn/fzf)
 
