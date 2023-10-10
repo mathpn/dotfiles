@@ -1,12 +1,14 @@
 # Setup
 
-Essential stuff:
+## Essential Stuff
+
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [neovim](https://neovim.io/)
 - [kitty](https://github.com/kovidgoyal/kitty)
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [zsh](https://www.zsh.org/)
+- [oh-my-zsh](https://ohmyz.sh/)
 - [lsd](https://github.com/lsd-rs/lsd)
 - [btop](https://github.com/aristocratos/btop)
 - [gogh](https://github.com/Gogh-Co/Gogh)
@@ -16,4 +18,3 @@ Essential stuff:
 - [listme](https://github.com/mathpn/listme)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
-
