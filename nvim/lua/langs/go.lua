@@ -98,6 +98,7 @@ return {
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
       },
+      require("config.conform"),
     },
   },
   {
@@ -134,7 +135,6 @@ return {
   },
   {
     "olexsmir/gopher.nvim",
-    ft = { "go", "gomod" },
     requires = { -- dependencies
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
