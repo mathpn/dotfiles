@@ -124,8 +124,6 @@ unset __conda_setup
 
 export PATH=$PATH:$HOME/go/bin/
 
-# new stuff
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -146,9 +144,10 @@ command -v lsd > /dev/null && alias tree='lsd --tree'
 command -v bat > /dev/null && alias cat='bat --paging=never --style=plain'
 command -v bat > /dev/null && alias less='bat'
 command -v kitty > /dev/null && alias ssh='kitty +kitten ssh'
+command -v nvim > /dev/null && alias vim='nvim'
 
 # editor
-export EDITOR=nvim
+export EDITOR=vim
 
 # terminal emulator
 export TERM=kitty
