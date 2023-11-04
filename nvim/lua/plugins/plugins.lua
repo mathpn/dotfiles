@@ -34,6 +34,7 @@ return {
         "delve",
         "isort",
         "black",
+        "staticcheck",
       })
     end,
   },
@@ -67,6 +68,7 @@ return {
         nls.builtins.diagnostics.markdownlint.with({
           extra_args = { "--disable", "MD013" },
         }),
+        nls.builtins.diagnostics.staticcheck,
       })
     end,
   },
