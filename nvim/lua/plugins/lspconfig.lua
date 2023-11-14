@@ -78,6 +78,9 @@ return {
             },
           },
         },
+
+        -- Elixir
+        elixirls = {},
       },
       setup = {
 
