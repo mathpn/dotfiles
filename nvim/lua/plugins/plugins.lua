@@ -13,6 +13,7 @@ return {
         "toml",
         "markdown",
         "markdown_inline",
+        "elixir",
       })
     end,
   },
@@ -35,6 +36,7 @@ return {
         "isort",
         "black",
         "staticcheck",
+        "elixir-ls",
       })
     end,
   },
