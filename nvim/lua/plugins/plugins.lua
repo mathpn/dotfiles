@@ -32,6 +32,7 @@ return {
         "gomodifytags",
         "impl",
         "goimports",
+        "gofumpt",
         "delve",
         "isort",
         "black",
@@ -56,7 +57,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        go = { "goimports", "gofmt" },
+        go = { "goimports", "gofumpt" },
         python = { "isort", "black" },
       },
     },
@@ -71,6 +72,10 @@ return {
           extra_args = { "--disable", "MD013" },
         }),
         nls.builtins.diagnostics.staticcheck,
+        nls.builtins.code_actions.gomodifytags,
+        nls.builtins.code_actions.impl,
+        nls.builtins.formatting.goimports,
+        nls.builtins.formatting.gofumpt,
       })
     end,
   },
@@ -108,6 +113,7 @@ return {
         ["neotest-go"] = {
           -- Here we can set options for neotest-go, e.g.
           -- args = { "-tags=integration" }
+          recursive_run = true,
         },
         ["neotest-python"] = {
           -- Here you can specify the settings for the adapter, i.e.
