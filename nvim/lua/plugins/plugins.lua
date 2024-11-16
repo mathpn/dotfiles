@@ -14,6 +14,7 @@ return {
         "markdown",
         "markdown_inline",
         "elixir",
+        "astro",
       })
     end,
   },
@@ -37,6 +38,7 @@ return {
         "black",
         "staticcheck",
         "elixir-ls",
+        "astro-language-server",
       })
     end,
   },
