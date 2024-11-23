@@ -47,22 +47,6 @@ return {
           },
         },
 
-        -- Markdown
-        marksman = {},
-        ltex = {
-          settings = {
-            ltex = {
-              checkFrequency = "save",
-              language = "en-US",
-              additionalRules = {
-                pickyRules = true,
-                motherTongue = "pt-BR",
-                languageModel = "~/.ltex/ngrams/",
-              },
-            },
-          },
-        },
-
         -- Elixir
         elixirls = {},
       },

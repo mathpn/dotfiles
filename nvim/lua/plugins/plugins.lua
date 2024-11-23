@@ -8,8 +8,6 @@ return {
         "gowork",
         "gosum",
         "toml",
-        "markdown",
-        "markdown_inline",
         "elixir",
       })
     end,
@@ -20,16 +18,11 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
         "gopls",
-        "markdownlint",
-        "marksman",
-        "ltex-ls",
         "gomodifytags",
         "impl",
         "goimports",
         "gofumpt",
         "delve",
-        "isort",
-        "black",
         "staticcheck",
         "elixir-ls",
       })
@@ -60,9 +53,6 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       opts.sources = vim.list_extend(opts.sources or {}, {
-        nls.builtins.diagnostics.markdownlint.with({
-          extra_args = { "--disable", "MD013" },
-        }),
         nls.builtins.diagnostics.staticcheck,
         nls.builtins.code_actions.gomodifytags,
         nls.builtins.code_actions.impl,
@@ -96,23 +86,5 @@ return {
         },
       },
     },
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-    keys = {
-      {
-        "<leader>cp",
-        ft = "markdown",
-        "<cmd>MarkdownPreviewToggle<cr>",
-        desc = "Markdown Preview",
-      },
-    },
-    config = function()
-      vim.cmd([[do FileType]])
-    end,
   },
 }
