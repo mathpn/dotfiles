@@ -7,14 +7,10 @@ return {
         "gomod",
         "gowork",
         "gosum",
-        "ninja",
-        "python",
-        "rst",
         "toml",
         "markdown",
         "markdown_inline",
         "elixir",
-        "astro",
       })
     end,
   },
@@ -24,9 +20,6 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
         "gopls",
-        "pyright",
-        "ruff",
-        "mypy",
         "markdownlint",
         "marksman",
         "ltex-ls",
@@ -39,7 +32,6 @@ return {
         "black",
         "staticcheck",
         "elixir-ls",
-        "astro-language-server",
       })
     end,
   },
@@ -60,7 +52,6 @@ return {
     opts = {
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
-        python = { "isort", "black" },
       },
     },
   },
@@ -69,7 +60,6 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       opts.sources = vim.list_extend(opts.sources or {}, {
-        nls.builtins.diagnostics.mypy,
         nls.builtins.diagnostics.markdownlint.with({
           extra_args = { "--disable", "MD013" },
         }),
@@ -89,18 +79,6 @@ return {
         "leoluz/nvim-dap-go",
         config = true,
       },
-      {
-        "mfussenegger/nvim-dap-python",
-        -- stylua: ignore
-        keys = {
-          { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
-          { "<leader>dPc", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
-        },
-        config = function()
-          local path = require("mason-registry").get_package("debugpy"):get_install_path()
-          require("dap-python").setup(path .. "/venv/bin/python")
-        end,
-      },
     },
   },
   {
@@ -108,7 +86,6 @@ return {
     optional = true,
     dependencies = {
       "nvim-neotest/neotest-go",
-      "nvim-neotest/neotest-python",
     },
     opts = {
       adapters = {
@@ -117,31 +94,8 @@ return {
           -- args = { "-tags=integration" }
           recursive_run = true,
         },
-        ["neotest-python"] = {
-          -- Here you can specify the settings for the adapter, i.e.
-          -- runner = "pytest",
-          -- python = ".venv/bin/python",
-        },
       },
     },
-  },
-  {
-    "linux-cultist/venv-selector.nvim",
-    cmd = "VenvSelect",
-    opts = function(_, opts)
-      if require("lazyvim.util").has("nvim-dap-python") then
-        opts.dap_enabled = true
-      end
-      return vim.tbl_deep_extend("force", opts, {
-        name = {
-          "venv",
-          ".venv",
-          "env",
-          ".env",
-        },
-      })
-    end,
-    keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
   },
   {
     "iamcco/markdown-preview.nvim",
