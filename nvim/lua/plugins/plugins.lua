@@ -9,6 +9,7 @@ return {
         "gosum",
         "toml",
         "elixir",
+        "r",
       })
     end,
   },
