@@ -24,8 +24,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
-        "pyright",
-        "ruff",
+        "debugpy",
         "mypy",
       })
     end,
@@ -34,6 +33,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        pyright = {},
         ruff = {
           cmd_env = { RUFF_TRACE = "messages" },
           init_options = {
@@ -41,15 +41,6 @@ return {
               logLevel = "error",
             },
           },
-          keys = {
-            {
-              "<leader>co",
-              LazyVim.lsp.action["source.organizeImports"],
-              desc = "Organize Imports",
-            },
-          },
-        },
-        ruff_lsp = {
           keys = {
             {
               "<leader>co",
@@ -72,7 +63,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      local servers = { ruff, lsp }
+      local servers = { "pyright", "basedpyright", "ruff", "ruff_lsp", ruff, lsp }
       for _, server in ipairs(servers) do
         opts.servers[server] = opts.servers[server] or {}
         opts.servers[server].enabled = server == lsp or server == ruff
@@ -152,14 +143,5 @@ return {
         python = function() end,
       },
     },
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      opts.sources = vim.list_extend(opts.sources or {}, {
-        nls.builtins.diagnostics.mypy,
-      })
-    end,
   },
 }

@@ -2,6 +2,13 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("LspDiagnosticsOnSave", { clear = true }),
+  callback = function()
+    vim.diagnostic.show()
+  end,
+})
+
 -- local Util = require("lazyvim.util")
 --
 -- local function hasLspErrors()
