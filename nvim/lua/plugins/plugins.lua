@@ -27,6 +27,10 @@ return {
     opts = {
       provider = "claude",
       auto_suggestions_provider = "ollama",
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-3-5-sonnet-20241022",
+      },
       vendors = {
         ollama = {
           __inherited_from = "openai",
