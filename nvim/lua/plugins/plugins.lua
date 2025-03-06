@@ -39,6 +39,7 @@ return {
           model = "qwen2.5-coder",
         },
       },
+      disabled_tools = { "web_search" },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
