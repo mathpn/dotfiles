@@ -26,18 +26,26 @@ return {
     version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
     opts = {
       provider = "claude",
-      auto_suggestions_provider = "ollama",
+      cursor_applying_provider = "groq",
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-5-sonnet-20241022",
       },
       vendors = {
-        ollama = {
+        --- ... existing vendors
+        groq = { -- define groq provider
           __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = "http://127.0.0.1:11434/v1",
-          model = "qwen2.5-coder",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "llama-3.3-70b-versatile",
+          max_tokens = 32768,
         },
+      },
+      ollama = {
+        model = "deepseek-r1",
+      },
+      behaviour = {
+        enable_cursor_planning_mode = true, -- enable cursor planning mode!
       },
       disabled_tools = { "web_search" },
     },
