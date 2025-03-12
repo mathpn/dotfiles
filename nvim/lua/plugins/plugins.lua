@@ -27,10 +27,6 @@ return {
     opts = {
       provider = "claude",
       cursor_applying_provider = "groq",
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-sonnet-20241022",
-      },
       vendors = {
         --- ... existing vendors
         groq = { -- define groq provider
