@@ -23,9 +23,11 @@ return {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
-    version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
+    version = false,
     opts = {
       provider = "claude",
+      mode = "agentic",
+      auto_suggestions_provider = "ollama",
       cursor_applying_provider = "groq",
       vendors = {
         --- ... existing vendors
@@ -38,10 +40,15 @@ return {
         },
       },
       ollama = {
-        model = "deepseek-r1",
+        model = "qwen3",
+      },
+      claude = {
+        model = "claude-3-5-sonnet-20241022",
+        max_tokens = 4096,
       },
       behaviour = {
-        enable_cursor_planning_mode = true, -- enable cursor planning mode!
+        enable_cursor_planning_mode = true,
+        enable_claude_text_editor_tool_mode = false,
       },
       disabled_tools = { "web_search" },
     },
