@@ -48,7 +48,6 @@ return {
       },
       behaviour = {
         enable_cursor_planning_mode = true,
-        enable_claude_text_editor_tool_mode = false,
       },
       disabled_tools = { "web_search" },
     },
