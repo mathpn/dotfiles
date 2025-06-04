@@ -29,8 +29,14 @@ return {
       mode = "agentic",
       auto_suggestions_provider = "ollama",
       cursor_applying_provider = "groq",
-      vendors = {
-        --- ... existing vendors
+
+      providers = {
+        ollama = {
+          model = "qwen3",
+        },
+        claude = {
+          model = "claude-3-5-sonnet-20241022",
+        },
         groq = { -- define groq provider
           __inherited_from = "openai",
           api_key_name = "GROQ_API_KEY",
@@ -39,13 +45,7 @@ return {
           max_tokens = 32768,
         },
       },
-      ollama = {
-        model = "qwen3",
-      },
-      claude = {
-        model = "claude-3-5-sonnet-20241022",
-        max_tokens = 4096,
-      },
+
       behaviour = {
         enable_cursor_planning_mode = true,
       },
