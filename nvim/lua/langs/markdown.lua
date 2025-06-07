@@ -39,7 +39,7 @@ return {
         "markdown-toc",
         "prettier",
         "marksman",
-        "ltex-ls",
+        "ltex-ls-plus",
         "harper-ls",
       })
     end,
@@ -115,9 +115,27 @@ return {
       servers = {
         marksman = {},
         harper_ls = {},
-        ltex = {
+        ltex_plus = {
           settings = {
             ltex = {
+              enabled = {
+                "bib",
+                "gitcommit",
+                "markdown",
+                "org",
+                "plaintex",
+                "rst",
+                "rnoweb",
+                "tex",
+                "pandoc",
+                "quarto",
+                "rmd",
+                "context",
+                -- "html",
+                -- "xhtml",
+                "mail",
+                "text",
+              },
               checkFrequency = "save",
               language = "en-US",
               additionalRules = {
