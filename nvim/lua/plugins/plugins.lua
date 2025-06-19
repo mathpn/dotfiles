@@ -32,10 +32,13 @@ return {
 
       providers = {
         ollama = {
-          model = "qwen3",
+          model = "qwen2.5-coder",
         },
         claude = {
           model = "claude-3-5-sonnet-20241022",
+          extra_request_body = {
+            max_tokens = 8192,
+          },
         },
         groq = { -- define groq provider
           __inherited_from = "openai",
@@ -45,7 +48,6 @@ return {
           max_tokens = 32768,
         },
       },
-
       behaviour = {
         enable_cursor_planning_mode = true,
       },
