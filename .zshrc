@@ -176,3 +176,6 @@ gitlog() {
 
 # Created by `pipx` on 2024-12-27 23:36:37
 export PATH="$PATH:/home/matheus/.local/bin"
+
+export PATH="$PATH:/home/matheus/.cargo/bin"
+
